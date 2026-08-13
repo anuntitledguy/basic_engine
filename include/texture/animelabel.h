@@ -1,0 +1,13 @@
+#ifndef ANIMELABEL_H
+#define ANIMELABEL_H
+
+enum class ANIMELABEL
+{
+	NOANIMATION,
+	WALKRIGHT,
+	WALKTOP,
+	WALKLEFT,
+	WALKDOWN
+};
+
+#endif

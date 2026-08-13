@@ -1,0 +1,83 @@
+{
+    "activeFile": "asset/map/test_2.json",
+    "expandedProjectPaths": [
+        "asset",
+        ".",
+        "asset/map"
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "/home/chems/snap/tiled/4902/test_tuile.tsx": {
+            "scaleInDock": 1
+        },
+        "/home/chems/snap/tiled/4902/tuile_floor.tsx": {
+            "scaleInDock": 1
+        },
+        "asset/map/FloorTiles1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "asset/map/test.json": {
+            "scale": 2.1560546874999997,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 255.55938037865758,
+                "y": 159.78258900262708
+            }
+        },
+        "asset/map/test_2.json": {
+            "scale": 1.1498958333333333,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 474.8256182625238,
+                "y": 297.8530664009421
+            }
+        },
+        "asset/map/test_2.json#FloorTiles1": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "asset/map/test_2.tmj": {
+            "scale": 2.1560546874999997,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 255.55938037865758,
+                "y": 159.78258900262708
+            }
+        },
+        "asset/map/test_2.tmx": {
+            "scale": 1.1498958333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 479.17383820998276,
+                "y": 319.59416613823714
+            }
+        },
+        "asset/map/tuile_floor.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "/home/chems/coding/basic_engine/asset/map",
+    "last.imagePath": "/home/chems/coding/basic_engine/asset/texture",
+    "map.lastUsedExportFilter": "Fichiers de carte JSON (*.tmj *.json)",
+    "map.lastUsedFormat": "json",
+    "openFiles": [
+        "asset/map/FloorTiles1.tsx",
+        "asset/map/test_2.tmx",
+        "asset/map/test_2.json"
+    ],
+    "project": "test_map.tiled-project",
+    "property.type": "int",
+    "recentFiles": [
+        "asset/map/FloorTiles1.tsx",
+        "asset/map/test_2.tmx",
+        "asset/map/test_2.json",
+        "asset/map/tuile_floor.tsx",
+        "asset/map/test.json",
+        "asset/map/test_2.tmj"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

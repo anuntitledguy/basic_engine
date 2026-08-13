@@ -1,0 +1,12 @@
+#ifndef COLLISIONSIDE_H
+#define COLLISIONSIDE_H
+
+enum class COLLISIONSIDE
+{
+	NONE,
+	UP,
+	LEFT,
+	DOWN,
+	RIGHT
+};
+#endif

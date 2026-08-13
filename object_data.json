@@ -1,0 +1,30 @@
+{
+    "Creator": "A guy",
+    "Scene Name": "scene_test",
+    "object": {
+        "id_1": {
+            "height": 16,
+            "pos": [
+                10.0,
+                10.0
+            ],
+            "width": 16
+        },
+        "id_2": {
+            "height": 24,
+            "pos": [
+                20.0,
+                20.0
+            ],
+            "width": 24
+        },
+        "id_3": {
+            "height": 32,
+            "pos": [
+                30.0,
+                30.0
+            ],
+            "width": 32
+        }
+    }
+}
