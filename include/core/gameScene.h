@@ -10,14 +10,16 @@
 #include "raylib.h"
 
 #include <iostream>
+#include <memory>
 
 class InputHandler;
 class TextureManager;
+class SoundManager;
 
 class GameScene
 {
 	public:
-		GameScene(TextureManager& textureManager, InputHandler& inputHandler);
+		GameScene(TextureManager& textureManager, SoundManager& soundManager, InputHandler& inputHandler);
 		~GameScene();
 		
 		void Load();
@@ -31,6 +33,7 @@ class GameScene
 		
 	private:
 		TextureManager& m_textureManager;
+		SoundManager& m_soundManager;
 		InputHandler& m_inputHandler;
 		
 		std::string m_id;
@@ -39,7 +42,7 @@ class GameScene
 		Mycamera m_camera;
 		CollisionHandler m_collisionHandler;
 		
-		std::map<std::string, GameObject> m_object;
+		std::map<std::string, std::unique_ptr<GameObject>> m_object;
 		
 	
 };

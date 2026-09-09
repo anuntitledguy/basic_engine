@@ -7,7 +7,7 @@
 class TileSet
 {
 	public:
-		TileSet(std::string id, Texture2D& tileset, int weight, int height, int nbrX, int nbrY);
+		TileSet(std::string id, Texture2D& tileset, int weight, int height, int nbrX, int nbrY, int firstGid);
 		virtual ~TileSet();
 		
 		Texture2D& GetTileSet() const;
@@ -20,12 +20,16 @@ class TileSet
 		int GetNbrX() const {return m_nbrX;};
 		int GetNbrY() const {return m_nbrY;};
 		
+		int GetFirstId() const {return m_firstGid;}
+		
 		private:
 			std::string m_id;
 			Texture2D& m_tileset;	
 			
 			int m_width, m_height;
-			int m_nbrX, m_nbrY;	
+			int m_nbrX, m_nbrY;
+			
+			int m_firstGid;
 			
 };
 #endif

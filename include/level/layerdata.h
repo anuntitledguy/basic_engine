@@ -23,6 +23,8 @@ struct LayerData
     // Tileset
     int tilesetColumns;
     int tilesetRows;
+    
+    int firstGid; //Index of first tile
 
     std::string tilesetTexture;
 };

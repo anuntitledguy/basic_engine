@@ -4,7 +4,8 @@
 enum class LAYER
 {
 	COLLISION,
-	DECOR
+	DECOR,
+	FLOOR
 };
 
 #endif

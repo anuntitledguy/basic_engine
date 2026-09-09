@@ -7,6 +7,7 @@
 #include "core/scenemanager.h"
 #include "input/inputhandler.h"
 #include "texture/texturemanager.h"
+#include "sound/soundmanager.h"
 
 #include <iostream>
 
@@ -26,6 +27,7 @@ class Engine
 			
 		private:
 			TextureManager m_textureManager;
+			SoundManager m_soundManager;
 			InputHandler m_inputHandler;
 			SceneManager m_sceneManager;
 			

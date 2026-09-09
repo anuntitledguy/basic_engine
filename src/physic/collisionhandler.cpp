@@ -134,7 +134,7 @@ CollisionInfo CollisionHandler::CheckMapXSide(const GameObject& object, TileMap&
 		for (const auto& p : corners)
 		{
 			TileLayer& layer = map.GetTileLayer(LAYER::COLLISION);
-			if (layer.GetTileID(p) != 1)
+			if (layer.GetTileID(p) == 0)
 				continue;
 
 			Rectangle tileRect = layer.GetTileRect(p);
@@ -207,7 +207,7 @@ CollisionInfo CollisionHandler::CheckMapYSide(const GameObject& object, TileMap&
 		{
 			TileLayer& layer = map.GetTileLayer(LAYER::COLLISION);
 
-			if (layer.GetTileID(p) != 1)
+			if (layer.GetTileID(p) ==0)
 				continue;
 
 			Rectangle tileRect = layer.GetTileRect(p);

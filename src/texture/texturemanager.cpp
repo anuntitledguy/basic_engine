@@ -7,7 +7,7 @@ TextureManager::TextureManager()
 
 TextureManager::~TextureManager()
 {
-
+    Unload();
 }
 
 void TextureManager::Load(const std::string& id, const std::string& path)

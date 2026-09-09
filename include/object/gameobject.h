@@ -8,10 +8,12 @@
 #include "texture/animelabel.h"
 #include "texture/animation.h"
 
+
 #include <iostream>
 #include <map>
 #include <memory>
 
+class TextureManager;
 class Sprite;
 enum class Direction;
 
@@ -31,6 +33,8 @@ class GameObject : public Iobject
 		
 		virtual void Update(double dt);
 		virtual void Draw();
+		
+		virtual void Init(TextureManager& texturemanager)=0;
 		
 		void Move(Direction dir);
 		
@@ -55,8 +59,9 @@ class GameObject : public Iobject
 		// Component add
 		//void AddSprite(std::string id, Texture2D& texture);
 		void AddAnimation(ANIMELABEL label, const std::string id, Texture2D& texture, const int x, const int y, const int w, const int h, const int frameRate, const int nbrFrame);
+		void ChangeAnimation(const ANIMELABEL animation);
 	
-	private:
+	protected:
 		std::string m_id;
 		Vector2 m_pos;
 		Vector2 m_velocity;

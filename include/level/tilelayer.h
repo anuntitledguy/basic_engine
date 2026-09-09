@@ -17,7 +17,7 @@ class TileLayer
 		
 		void Draw();
 		
-		void AddTileSet(std::string id, Texture2D& tileset, int tilewidth, int tileheight, int nbrX, int nbrY);
+		void AddTileSet(std::string id, Texture2D& tileset, int tilewidth, int tileheight, int nbrX, int nbrY, int firstGid);
 		
 		int GetTileID(const Vector2 pos) const;
 		Rectangle GetTileRect(const Vector2 pos) const;
@@ -29,6 +29,7 @@ class TileLayer
 		std::unique_ptr<TileSet> m_tileset;
 		
 		int m_nbrY, m_nbrX;
+		//int m_firstGid;
 
 };
 #endif

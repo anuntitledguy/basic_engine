@@ -68,6 +68,27 @@ std::vector<LayerData> MapParser::ExtractData(std::string address)
                 }
             }
         }
+        
+         else if (data["layers"][i]["name"] == "FLOOR")
+        {
+            layer.type = LAYER::FLOOR;
+
+            for (size_t j = 0; j < data["tilesets"].size(); ++j)
+            {
+                if (data["tilesets"][j]["class"] == "DECOR")
+                {
+                    layer.tilesetColumns =
+                        data["tilesets"][j]["columns"];
+
+                    layer.tilesetRows =
+                        int(data["tilesets"][j]["tilecount"]) /
+                        int(data["tilesets"][j]["columns"]);
+
+                    layer.tilesetTexture =
+                        data["tilesets"][j]["image"];
+                }
+            }
+        }
 
         setData.emplace_back(std::move(layer));
     }

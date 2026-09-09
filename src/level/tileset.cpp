@@ -2,7 +2,7 @@
 
 #include "raylib.h"
 
-TileSet::TileSet(std::string id, Texture2D& tileset, int width, int height, int nbrX, int nbrY):
+TileSet::TileSet(std::string id, Texture2D& tileset, int width, int height, int nbrX, int nbrY, int firstGid):
 m_tileset(tileset)
 {
 	std::string m_id=id;
@@ -10,6 +10,7 @@ m_tileset(tileset)
 	m_height=height;	
 	m_nbrX=nbrX;
 	m_nbrY=nbrY;
+	m_firstGid=firstGid;
 }
 
 TileSet::~TileSet()
@@ -24,6 +25,7 @@ Texture2D& TileSet::GetTileSet() const
 
 Rectangle TileSet::GetRectSource(int tileIndex) const
 {
-	Rectangle rec={(float)((tileIndex%m_nbrX)*m_width), (float)((tileIndex/m_nbrX)*m_height), (float)m_width, (float)m_height};
+	int index = ((tileIndex-m_firstGid) <= 0)  ? 0 : (tileIndex-m_firstGid);
+	Rectangle rec={(float)((index%m_nbrX)*m_width), (float)((index/m_nbrX)*m_height), (float)m_width, (float)m_height};
 	return(rec);
 }

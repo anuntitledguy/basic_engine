@@ -20,8 +20,8 @@ class TileMap
 		void Draw();
 		//void Update();
 		
-		void LoadLayer(std::string id, LAYER layer, std::vector<int> tiles, int layerNbrX, int layerNbrY, Texture2D& tileset, int tilesetWidth, int tilesetHeight, int tilesetNbrX, int tilesetNbrY);
-		void LoadMap(std::string id, std::string address, Texture2D& tileset);
+		void LoadLayer(std::string id, Texture2D& tileset, LAYER layer, std::vector<int> tiles, int layerNbrX, int layerNbrY, int tileWidth, int tileHeight, int tilesetNbrX, int tilesetNbrY, int firstGid);
+		void LoadMap(std::string id, std::string address);
 		void Unload();
 		
 		TileLayer& GetTileLayer(const LAYER layer);

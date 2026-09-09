@@ -31,7 +31,6 @@ void GameObject::Update(double dt)
 void GameObject::Draw()
 {
 	m_sprite.at(m_currentAnimation)->Draw(m_pos.x, m_pos.y, WHITE);
-	//DrawRectangle(m_posX, m_posY, 16, 16,MAROON);
 }
 
 void GameObject::Move(Direction dir)
@@ -53,7 +52,6 @@ void GameObject::Move(Direction dir)
 		this->m_velocity.y=-100;
 	}
 }
-		
 		// Accesseur
 float GameObject::GetPosX() const
 {
@@ -96,13 +94,11 @@ void GameObject::SetPosY(const float posY)
 
 void GameObject::ApplyVelocityX(float dt)
 {
-	m_boundingBox.y=m_pos.y;
 	m_boundingBox.x+=m_velocity.x*dt;
 }
 
 void GameObject::ApplyVelocityY(float dt)
 {
-	m_boundingBox.x=m_pos.x;
 	m_boundingBox.y+=m_velocity.y*dt;
 }
 		
@@ -142,4 +138,12 @@ void GameObject::ResetVelocityY()
 void GameObject::AddAnimation(ANIMELABEL label, const std::string id, Texture2D& texture, const int x, const int y, const int w, const int h, const int frameRate, const int nbrFrame)
 {
 	m_sprite.emplace(label,std::make_unique<Animation>(id, texture, x, y, w, h, frameRate, nbrFrame));
+}
+
+void GameObject::ChangeAnimation(const ANIMELABEL animation)
+{
+	if(m_sprite.find(animation)!=m_sprite.end())
+	{
+		m_currentAnimation=animation;
+	}
 }

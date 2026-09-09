@@ -6,8 +6,9 @@
 
 Engine::Engine()
 :m_textureManager(),
+m_soundManager(),
 m_inputHandler(),
-m_sceneManager(m_textureManager,m_inputHandler)
+m_sceneManager(m_textureManager,m_soundManager,m_inputHandler)
 {
 	this->m_previousTime=0;
 	this->m_currentTime=0;
@@ -22,6 +23,7 @@ Engine::~Engine()
 void Engine::Init()
 {
 	InitWindow(SCREENX, SCREENY, "Raylib sur Raspberry Pi");
+	InitAudioDevice();
 	
 	this->m_previousTime=0;
 	this->m_currentTime=GetTime();
@@ -64,6 +66,9 @@ void Engine::ShutDown()
 {
 	m_sceneManager.UnloadSceneManager();
 	m_inputHandler.Unload();
+	m_soundManager.Unload();
 	m_textureManager.Unload();
+	
+	CloseAudioDevice();
 	CloseWindow();
 }

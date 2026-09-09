@@ -1,12 +1,14 @@
 #include "core/scenemanager.h"
 #include "texture/texturemanager.h"
+#include "sound/soundmanager.h"
 #include "core/gameScene.h"
 
 #include <iostream>
 
 
-SceneManager::SceneManager(TextureManager& textureManager, InputHandler& inputHandler)
+SceneManager::SceneManager(TextureManager& textureManager, SoundManager& soundManager, InputHandler& inputHandler)
 :m_textureManager(textureManager),
+m_soundManager(soundManager),
 m_inputHandler(inputHandler)
 {
     std::cout << "sceneManager created\n";
@@ -23,7 +25,7 @@ void SceneManager::LoadScene(const std::string scene_ID)
 {
     std::cout << "load scene\n";
 
-    m_scene[scene_ID] = std::make_unique<GameScene>(m_textureManager, m_inputHandler);
+    m_scene[scene_ID] = std::make_unique<GameScene>(m_textureManager, m_soundManager, m_inputHandler);
     auto it = m_scene.find(scene_ID);
 
     if(it != m_scene.end())

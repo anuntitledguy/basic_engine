@@ -1,9 +1,9 @@
 {
-    "activeFile": "asset/map/test_2.json",
+    "activeFile": "",
     "expandedProjectPaths": [
-        "asset",
+        "asset/map",
         ".",
-        "asset/map"
+        "asset"
     ],
     "fileStates": {
         "": {
@@ -32,7 +32,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 474.8256182625238,
-                "y": 297.8530664009421
+                "y": 297.85306640094205
             }
         },
         "asset/map/test_2.json#FloorTiles1": {
@@ -52,7 +52,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 479.17383820998276,
-                "y": 319.59416613823714
+                "y": 319.5941661382371
             }
         },
         "asset/map/tuile_floor.tsx": {
@@ -65,9 +65,6 @@
     "map.lastUsedExportFilter": "Fichiers de carte JSON (*.tmj *.json)",
     "map.lastUsedFormat": "json",
     "openFiles": [
-        "asset/map/FloorTiles1.tsx",
-        "asset/map/test_2.tmx",
-        "asset/map/test_2.json"
     ],
     "project": "test_map.tiled-project",
     "property.type": "int",

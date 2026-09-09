@@ -20,17 +20,20 @@ void TileLayer::Draw()
 	Texture2D& texture=m_tileset->GetTileSet();
 	for(size_t index = 0; index < m_tiles.size(); ++index)
 	{
-		Rectangle rec= m_tileset->GetRectSource(m_tiles[index]);
-			
-		Vector2 pos={(float)((index%this->m_nbrX)*m_tileset->GetWidth()),(float)((index/this->m_nbrX)*m_tileset->GetHeight())};
-			
-		DrawTextureRec(texture, rec, pos, WHITE);
+		if(m_tiles[index]!=0)
+		{
+			Rectangle rec= m_tileset->GetRectSource(m_tiles[index]);
+				
+			Vector2 pos={(float)((index%this->m_nbrX)*m_tileset->GetWidth()),(float)((index/this->m_nbrX)*m_tileset->GetHeight())};
+				
+			DrawTextureRec(texture, rec, pos, WHITE);
+		}
 	}
 }
 		
-void TileLayer::AddTileSet(std::string id, Texture2D& tileset, int tilewidth, int tileheight, int nbrX, int nbrY)
+void TileLayer::AddTileSet(std::string id, Texture2D& tileset, int tilewidth, int tileheight, int nbrX, int nbrY, int firstGid)
 {
-	m_tileset=std::make_unique<TileSet>(id, tileset, tilewidth, tileheight, nbrX, nbrY);
+	m_tileset=std::make_unique<TileSet>(id, tileset, tilewidth, tileheight, nbrX, nbrY, firstGid);
 }
 
 

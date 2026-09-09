@@ -8,12 +8,13 @@
 
 class GameScene;
 class TextureManager;
+class SoundManager;
 class InputHandler;
 
 class SceneManager
 	{
 		public:
-			SceneManager(TextureManager& m_textureManager, InputHandler& inputHandler);
+			SceneManager(TextureManager& textureManager, SoundManager& soundManager, InputHandler& inputHandler);
 			virtual ~SceneManager();
 			
 			void LoadScene(const std::string scene_ID /*info pour construire la scene*/);
@@ -31,6 +32,7 @@ class SceneManager
 			std::string m_activeScene;
 			
 			TextureManager& m_textureManager;
+			SoundManager& m_soundManager;
 			InputHandler& m_inputHandler;
 			
 	};

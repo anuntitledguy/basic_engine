@@ -18,11 +18,23 @@ TileMap::~TileMap()
 
 void TileMap::Draw()
 {
-    auto it = m_layer.find(LAYER::COLLISION);
+    auto it_floor = m_layer.find(LAYER::FLOOR);
 
-    if(it != m_layer.end())
+    if(it_floor != m_layer.end())
     {
-        m_layer[LAYER::COLLISION]->Draw();
+        m_layer[LAYER::FLOOR]->Draw();
+    }
+    
+    else
+    {
+        std::cout <<" layer FLOOR doesn't exist\n";
+    }
+    
+    auto it_decor = m_layer.find(LAYER::DECOR);
+
+    if(it_decor != m_layer.end())
+    {
+        m_layer[LAYER::DECOR]->Draw();
     }
     
     else
@@ -30,12 +42,23 @@ void TileMap::Draw()
         std::cout <<" layer DECOR doesn't exist\n";
     }
     
+    /*auto it_collision = m_layer.find(LAYER::COLLISION);
+
+    if(it_collision != m_layer.end())
+    {
+        m_layer[LAYER::COLLISION]->Draw();
+    }
+    
+    else
+    {
+        std::cout <<" layer DECOR doesn't exist\n";
+    }*/
 }
 		
-void TileMap::LoadLayer(std::string id, LAYER layer, std::vector<int> tiles, int layerNbrX, int layerNbrY, Texture2D& tileset, int tilesetWidth, int tilesetHeight, int tilesetNbrX, int tilesetNbrY)
+void TileMap::LoadLayer(std::string id, Texture2D& tileset, LAYER layer, std::vector<int> tiles, int layerNbrX, int layerNbrY, int tileWidth, int tileHeight, int tilesetNbrX, int tilesetNbrY, int firstGid)
 {
-    m_sizeX=layerNbrX*tilesetWidth;
-    m_sizeY=layerNbrY*tilesetHeight;
+    m_sizeX=layerNbrX*tileWidth;
+    m_sizeY=layerNbrY*tileHeight;
 	m_nbrX=layerNbrX;
 	m_nbrY=layerNbrY;
 
@@ -44,7 +67,7 @@ void TileMap::LoadLayer(std::string id, LAYER layer, std::vector<int> tiles, int
 
     if(it != m_layer.end())
     {
-        m_layer[layer]->AddTileSet(id, tileset, tilesetWidth, tilesetHeight, tilesetNbrX, tilesetNbrY);
+        m_layer[layer]->AddTileSet(id, tileset, tileWidth, tileHeight, tilesetNbrX, tilesetNbrY, firstGid);
 	std::cout << id <<" layer loaded\n";
     }
     
@@ -55,7 +78,7 @@ void TileMap::LoadLayer(std::string id, LAYER layer, std::vector<int> tiles, int
 }
 
 
-void TileMap::LoadMap(std::string id, std::string address, Texture2D& tileset)
+/*void TileMap::LoadMap(std::string id, std::string address)
 {
     MapParser parser;
 
@@ -83,14 +106,15 @@ void TileMap::LoadMap(std::string id, std::string address, Texture2D& tileset)
             layer.tileWidth,
             layer.tileHeight,
             layer.tilesetColumns,
-            layer.tilesetRows
+            layer.tilesetRows,
+            layer.firstGid
         );
 
         m_layer[layer.type] = std::move(tileLayer);
 
         std::cout << id << " layer loaded\n";
     }
-}
+}*/
 
 void TileMap::Unload()
 {
